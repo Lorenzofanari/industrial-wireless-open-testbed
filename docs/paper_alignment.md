@@ -10,7 +10,7 @@ repository, so a reviewer can locate the support for each claim quickly.
 | **C3** | Software-only demonstration mode (no radio hardware), suitable for teaching, artifact checking, and CI. | `scripts/run_demo.py`, `scripts/generate_traces.py`; `configs/*.yaml`; `data/synthetic_demo/`; `.github/workflows/reproducibility.yml`. |
 | **C4** | Unified capture-to-metrics-to-figures workflow with per-run manifests. | `scripts/run_demo.py`; `src/packet_observability/metrics.py`, `plotting.py`, `manifest.py`; `results/` layout; `docs/reproducibility_protocol.md`. |
 | **C5** | Four technology-like case-study profiles (Wi-Fi-like, BLE/IIoT-like, IEEE 802.15.4/Zigbee-like, LoRa/Sub-GHz/SDR receive-only). | `configs/wifi_like.yaml`, `ble_like.yaml`, `ieee802154_like.yaml`, `lora_sdr_like.yaml`; `docs/case_studies.md`; `data/synthetic_demo/<case>/`. |
-| **C6** | Explicit novelty and safety firewall (no jamming, offensive tooling, scheduler claims, or standard-validation claims). | `docs/limitations_and_non_goals.md`; `docs/safety_and_ethics.md`; `SECURITY.md`; `tests/test_no_unsafe_terminology.py`. |
+| **C6** | Explicit scope and safety boundaries (educational artifact; no offensive functionality, interference mitigation, wireless algorithms, or standard validation). | `docs/limitations_and_non_goals.md`; `claims_included.md`; `claims_excluded.md`; `docs/safety_and_ethics.md`; `SECURITY.md`; `tests/test_no_unsafe_terminology.py`. |
 
 ## How to verify the mapping
 

@@ -1,0 +1,12 @@
+item,quantity,tier,required_or_optional,purpose,approx_cost_eur,notes
+Existing PC or laptop,1,0,required,Run the software-only synthetic demo and the whole pipeline,0,Uses hardware you already have; no radio needed
+Wi-Fi monitor-mode adapter,1,1,optional,Passive observation of benign traffic on an owned Wi-Fi network,25,Owned/authorised network only; no standard validation
+Raspberry Pi-class node,1,2,optional,Low-cost dedicated capture/gateway node for a teaching bench,60,Portable owned node; optional
+BLE dongle,1,2,optional,Observe low-rate telemetry on owned BLE devices,12,Owned devices only; no third-party scanning
+IEEE 802.15.4 sniffer,1,2,optional,Observe low-power sensing on an owned 802.15.4 testbed,30,Owned PAN only
+RTL-SDR receive-only dongle,1,3,optional,Receive-only observation on legally observable bands,30,Receive only; never transmits
+USB hub (powered),1,1,optional,Connect multiple USB radios without undervoltage,15,Powered hub recommended
+Shielded box / Faraday enclosure,1,4,optional,Contain RF for repeatable, isolated owned-device experiments,150,Best practice for containment
+RF attenuators (SMA),2,4,optional,Reduce signal level for safe, contained cabled paths,20,Helps keep experiments contained
+Coaxial cables / SMA pigtails,2,4,optional,Cabled/attenuated RF paths instead of over-the-air,10,Improves reproducibility and containment
+Power supplies (official),1,2,optional,Stable power for node(s) such as a Raspberry Pi-class board,12,Avoids undervoltage warnings

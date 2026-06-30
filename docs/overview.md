@@ -2,11 +2,10 @@
 
 ## What this artifact is
 
-This repository is an open-source **instrumentation and reproducibility
-workflow** for packet-level observability in educational cyber–physical
-laboratories. It accompanies the paper *Open-Source Instrumentation for
-Reproducible Industrial Wireless Packet Observability in Educational
-Cyber–Physical Laboratories*.
+This repository is an open-source **educational hardware/software artifact** for
+teaching reproducible wireless packet observability in cyber–physical
+laboratories. It accompanies the paper *An Open-Source Educational Artifact for
+Wireless Packet Observability in Cyber–Physical Laboratories*.
 
 It provides a configuration-driven, **software-only synthetic demo mode**: from
 a YAML configuration it generates deterministic synthetic packet traces,
@@ -42,11 +41,13 @@ profiles are described in [`case_studies.md`](case_studies.md).
 
 ## What it is not
 
-It is not an anti-jamming tool, an offensive cybersecurity framework, a wireless
-scheduler, or a standard-conformant implementation/validation of Wi-Fi, BLE,
-IEEE 802.15.4/Zigbee, LoRa, or SDR systems. Synthetic demo-mode outputs are not
-real radio measurements. See
-[`limitations_and_non_goals.md`](limitations_and_non_goals.md) and
+This artifact does not implement wireless algorithms, interference mitigation,
+offensive cybersecurity functionality, or radio-standard validation. Its purpose
+is to teach reproducible packet-observability workflows. Synthetic demo-mode
+outputs are not real radio measurements. See
+[`limitations_and_non_goals.md`](limitations_and_non_goals.md),
+[`claims_included.md`](../claims_included.md),
+[`claims_excluded.md`](../claims_excluded.md), and
 [`safety_and_ethics.md`](safety_and_ethics.md).
 
 ## Where to go next

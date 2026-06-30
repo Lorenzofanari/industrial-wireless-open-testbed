@@ -14,15 +14,24 @@ and does not claim.
 
 ## Non-goals (explicit boundaries)
 
-| Non-goal | Statement |
-|----------|-----------|
-| Anti-jamming / interference mitigation | The artifact does not detect, mitigate, or protect against interference, and provides no such capability. |
-| Offensive cybersecurity functionality | The artifact provides no jamming, flooding, deauthentication, exploitation, or unauthorised scanning. |
-| Wireless scheduler | The artifact does not implement or evaluate any scheduling algorithm. |
-| Standard implementation / validation | The artifact does not implement or validate Wi-Fi, BLE, IEEE 802.15.4/Zigbee, LoRa, or SDR standards; profiles are technology-like, not standard-conformant. |
-| Real radio-performance claim | Synthetic demo-mode outputs are not real radio measurements and assert no real radio performance. |
-| Industrial reliability | The artifact makes no industrial-grade reliability claim. |
-| Safety certification | The artifact makes no safety, SIL, or certification claim. |
+In a single sentence: **this artifact does not implement wireless algorithms,
+interference mitigation, offensive cybersecurity functionality, or radio-standard
+validation. Its purpose is to teach reproducible packet-observability
+workflows.**
+
+Concretely, the following are out of scope and not claimed:
+
+| Out of scope | Statement |
+|--------------|-----------|
+| Real radio performance | Synthetic demo-mode outputs are not real radio measurements and assert no real radio performance. |
+| Radio-standard validation | No implementation or validation of Wi-Fi, BLE, IEEE 802.15.4/Zigbee, LoRa, or SDR standards; profiles are technology-like, not standard-conformant. |
+| Offensive cybersecurity | No jamming, flooding, deauthentication, exploitation, or unauthorised scanning. |
+| Interference mitigation | No interference detection, mitigation, or protection of any kind. |
+| Wireless algorithms | No scheduling or other wireless control algorithm is implemented or evaluated. |
+| Industrial certification / deployment readiness | No industrial-grade reliability, safety, SIL, or certification claim; this is a teaching/research artifact. |
+
+The full, concise lists are kept in [`../claims_included.md`](../claims_included.md)
+and [`../claims_excluded.md`](../claims_excluded.md).
 
 ## Measurement limitations
 
@@ -46,5 +55,5 @@ and does not claim.
   responsibility.
 
 See [`safety_and_ethics.md`](safety_and_ethics.md) for the use policy and
-[`paper_alignment.md`](paper_alignment.md) for how these boundaries map to the
-paper's safety firewall (contribution C6).
+[`paper_alignment.md`](paper_alignment.md) for how the artifact maps to the
+paper's structure.

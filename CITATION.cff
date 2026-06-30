@@ -1,29 +1,38 @@
 cff-version: 1.2.0
 message: "If you use this artifact, please cite it as below."
-title: "Open-Source Instrumentation for Reproducible Industrial Wireless Packet Observability in Educational Cyber-Physical Laboratories"
+title: "An Open-Source Educational Artifact for Wireless Packet Observability in Cyber-Physical Laboratories"
 abstract: >-
-  An open-source instrumentation and reproducibility workflow for packet-level
-  observability in educational cyber-physical laboratories. The artifact provides
-  a configuration-driven, software-only synthetic demo mode that generates
-  deterministic packet traces, computes packet-level metrics, produces figures,
-  and writes per-run manifests with SHA-256 hashes, across four technology-like
-  case-study profiles (Wi-Fi-like, BLE/IIoT-like, IEEE 802.15.4/Zigbee-like, and
-  LoRa/Sub-GHz/SDR receive-only). It is extensible to owned-device and
-  receive-only observation. Synthetic demo-mode outputs are not real radio
-  measurements, and the artifact makes no jamming, scheduling, or
-  standard-validation claims.
+  An open-source educational hardware/software artifact for teaching reproducible
+  wireless packet observability in cyber-physical laboratories. The artifact
+  provides a configuration-driven, software-only synthetic demo mode that
+  generates deterministic packet traces, computes packet-level metrics, produces
+  figures, and writes per-run manifests with SHA-256 hashes, across four
+  technology-like case-study profiles (Wi-Fi-like, BLE/IIoT-like, IEEE
+  802.15.4/Zigbee-like, and LoRa/Sub-GHz/SDR receive-only). It is extensible to
+  optional owned-device and receive-only observation. Synthetic demo-mode outputs
+  are not real radio measurements; the artifact implements no wireless algorithm,
+  interference mitigation, offensive cybersecurity functionality, or
+  radio-standard validation.
 type: software
 version: 0.1.0
 date-released: 2026-06-30
 license: MIT
 keywords:
   - packet observability
-  - instrumentation
+  - educational artifact
   - reproducibility
-  - educational cyber-physical laboratory
+  - cyber-physical laboratory
   - synthetic demo mode
   - receive-only SDR
 authors:
-  - name: "TODO: replace with author name(s) before publication"
-# repository-code: "TODO: add public repository URL before publication"
-# doi: "TODO: mint and add a DOI (e.g. via Zenodo) before publication"
+  - family-names: Fanari
+    given-names: Lorenzo
+  - family-names: "Galán"
+    given-names: Patxi
+  - family-names: Monteagudo
+    given-names: "Ángel"
+repository-code: "https://github.com/Lorenzofanari/industrial-wireless-open-testbed"
+identifiers:
+  - type: doi
+    value: "TO_BE_ADDED_AFTER_ZENODO_RELEASE"
+    description: "Placeholder; replace with the Zenodo DOI after archiving the release."

@@ -1,85 +1,63 @@
-# Open-Source Instrumentation for Reproducible Industrial Wireless Packet Observability
+# An Open-Source Educational Artifact for Wireless Packet Observability in Cyber–Physical Laboratories
 
 [![Reproducibility CI](https://img.shields.io/badge/CI-reproducibility-blue)](.github/workflows/reproducibility.yml)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-green)](LICENSE)
 [![Docs: CC BY 4.0](https://img.shields.io/badge/docs-CC_BY_4.0-lightgrey)](LICENSE)
 
-An open-source **instrumentation and reproducibility workflow** for packet-level
-observability in educational cyber–physical laboratories. It accompanies the
-paper *Open-Source Instrumentation for Reproducible Industrial Wireless Packet
-Observability in Educational Cyber–Physical Laboratories* and is intended as a
-public, reviewable, reusable scientific artifact in the style of open scientific
-hardware/software documentation.
+## Summary
 
-## Scope
+This repository is an open-source **educational hardware/software artifact** for
+teaching reproducible wireless packet observability in cyber–physical
+laboratories. From human-editable YAML profiles it generates deterministic
+**synthetic** packet traces, computes packet-level metrics, produces figures, and
+writes per-run manifests with SHA-256 hashes — entirely software-only, with no
+radio hardware. It accompanies the MDPI *Hardware* paper of the same title and is
+intended for public release and Supplementary Material.
 
-The repository provides a configuration-driven, **software-only synthetic demo
-mode**: from YAML configurations it generates deterministic synthetic packet
-traces, computes packet-level metrics, produces figures, and writes per-run
-manifests with SHA-256 hashes. It also ships documentation and optional notes
-for extending to owned-device and receive-only observation. Concretely it
-includes synthetic demo-mode traces, YAML configurations, metrics, figures,
-manifests, hashes, documentation, and optional hardware notes.
+## What this artifact teaches
 
-## Non-goals
+- Configuring a wireless traffic profile with YAML.
+- Generating a reproducible synthetic packet trace.
+- Computing and interpreting packet-observability metrics (rate, inter-arrival,
+  jitter proxy, missing/duplicate sequence ids, completeness).
+- Documenting configuration, results, manifests, and hashes.
+- Understanding why synthetic traces do not prove real radio performance.
+- Extending cautiously to owned-device or receive-only observation.
 
-> - This is **not** an anti-jamming tool.
-> - This is **not** an offensive cybersecurity framework (no jamming, flooding,
->   deauthentication, exploitation, or unauthorised scanning).
-> - This is **not** a wireless scheduler.
-> - This is **not** a full implementation or validation of Wi-Fi, BLE,
->   IEEE 802.15.4, Zigbee, LoRa, or SDR systems; the case studies are
->   technology-like profiles, **not** standard-conformant implementations.
-> - Synthetic demo-mode outputs are **not** real radio measurements.
-
-See [`docs/limitations_and_non_goals.md`](docs/limitations_and_non_goals.md).
+See [`docs/learning_objectives.md`](docs/learning_objectives.md).
 
 ## Quickstart
 
 ```bash
-# 1. Clone
-git clone <repository-url>
+git clone https://github.com/Lorenzofanari/industrial-wireless-open-testbed.git
 cd industrial-wireless-open-testbed
-
-# 2. Create an environment
-python -m venv .venv && source .venv/bin/activate     # or: conda env create -f environment.yml
-
-# 3. Install dependencies
+python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-
-# 4. Run the synthetic demo (all four case studies)
 python scripts/run_demo.py --all
-
-# 5. Compute metrics / generate figures for a single case (also done by run_demo)
-python scripts/compute_metrics.py --input results/demo/wifi_like/packets.csv
-python scripts/plot_results.py   --input results/demo/wifi_like/packets.csv --out-dir results/demo/wifi_like/figures
-
-# 6. Verify reproducibility
 python scripts/verify_reproducibility.py --all
+pytest
 ```
 
-See [`docs/quickstart.md`](docs/quickstart.md) for a guided walkthrough.
+See [`docs/quickstart.md`](docs/quickstart.md) and
+[`docs/build_instructions.md`](docs/build_instructions.md).
 
 ## Repository structure
 
 ```
 .
 ├── configs/        # one technology-like YAML profile per case study
-├── src/
-│   └── packet_observability/   # core library (generator, metrics, plotting, manifest, hashing, io)
-│       └── extensions/         # optional owned-device / receive-only tools
+├── src/packet_observability/   # core library (+ optional extensions/)
 ├── scripts/        # thin command-line entry points
-├── data/
-│   └── synthetic_demo/         # canonical, versioned synthetic traces (one per case)
-├── results/        # regenerated metrics, figures, manifests (not version-controlled)
-├── hardware/       # optional hardware extension notes (BOM, adoption tiers, safety)
-├── docs/           # overview, quickstart, reproducibility, schema, metrics, limits, ethics
-├── tests/          # determinism, metrics, manifest hashes, configs, terminology guard
-├── archive/        # superseded legacy material kept for traceability
+├── data/synthetic_demo/        # canonical, versioned synthetic traces
+├── results/        # regenerated metrics/figures/manifests (git-ignored)
+├── hardware/       # optional hardware tier notes (topology, BOM, safety)
+├── docs/           # build, operating, educational, validation, design docs
+├── tests/          # determinism, metrics, manifests, configs, terminology guard
 └── .github/workflows/reproducibility.yml   # hardware-free CI
 ```
 
-## Case studies
+## Case-study profiles
 
 Four **technology-like** profiles over one common toolchain (not
 standard-conformant; see [`docs/case_studies.md`](docs/case_studies.md)):
@@ -89,49 +67,67 @@ standard-conformant; see [`docs/case_studies.md`](docs/case_studies.md)):
 - **IEEE 802.15.4/Zigbee-like** — low-power, constrained-payload sensing.
 - **LoRa/Sub-GHz/SDR-like** — long-range event logging; optional receive-only SDR.
 
+## Build tiers
+
+- **Tier 0 — software-only:** needs no radio hardware; this is the default.
+- **Tiers 1–4 — optional:** owned-device Wi-Fi observation, BLE / IEEE 802.15.4
+  teaching bench, receive-only SDR, and contained RF. All optional tiers are
+  owned-device or receive-only. See
+  [`docs/build_instructions.md`](docs/build_instructions.md) and
+  [`hardware/adoption_tiers.md`](hardware/adoption_tiers.md).
+
+## Operating instructions
+
+A 90–120 minute teaching session: select a profile, inspect the YAML, generate a
+trace, compute metrics, inspect figures and manifests, compare profiles, and
+submit deliverables. See [`docs/operating_instructions.md`](docs/operating_instructions.md),
+[`docs/lab_activity_plan.md`](docs/lab_activity_plan.md),
+[`docs/student_worksheet.md`](docs/student_worksheet.md),
+[`docs/instructor_guide.md`](docs/instructor_guide.md), and
+[`docs/assessment_rubric.md`](docs/assessment_rubric.md).
+
 ## Reproducibility
 
-Generation is driven by a fixed seed per config. Each run writes a `manifest.json`
-recording the config, seed, git commit, output files, and their SHA-256 hashes,
-producing CSV traces that regenerate deterministically. The committed traces in
-`data/synthetic_demo/` are canonical references that
-`scripts/verify_reproducibility.py` checks for byte/hash consistency. See
-[`docs/reproducibility_protocol.md`](docs/reproducibility_protocol.md).
+Generation is seeded per config. Each run writes a `manifest.json` with config,
+seed, git commit, and SHA-256 hashes of all outputs. The committed traces in
+`data/synthetic_demo/` are canonical references checked by
+`scripts/verify_reproducibility.py`. See
+[`docs/reproducibility_protocol.md`](docs/reproducibility_protocol.md),
+[`docs/validation_walkthrough.md`](docs/validation_walkthrough.md), and
+[`docs/reproducibility_expected_outputs.md`](docs/reproducibility_expected_outputs.md).
+
+Synthetic demo-mode outputs are not real measurements; this is a teaching
+artifact.
 
 ## Safety and ethics
 
-Safe by design:
+Safe by design: synthetic mode emits no RF signal and touches no network
+interface; optional extensions are passive / receive-only and default to a
+dry-run; owned-device observation applies only in authorised, controlled
+environments. The artifact provides no jamming, flooding, deauthentication,
+exploitation, or unauthorised scanning. See
+[`docs/safety_and_ethics.md`](docs/safety_and_ethics.md),
+[`SECURITY.md`](SECURITY.md), and [`hardware/safety_notes.md`](hardware/safety_notes.md).
 
-- synthetic mode emits no RF signal and touches no network interface;
-- the optional receive-only SDR extension only observes;
-- owned-device observation applies only in authorised, controlled environments;
-- there is no jamming, flooding, deauthentication, exploitation, or unauthorised
-  scanning.
+This artifact does not implement wireless algorithms, interference mitigation,
+offensive cybersecurity functionality, or radio-standard validation; its purpose
+is to teach reproducible packet-observability workflows
+([`claims_included.md`](claims_included.md), [`claims_excluded.md`](claims_excluded.md),
+[`docs/limitations_and_non_goals.md`](docs/limitations_and_non_goals.md)).
 
-See [`docs/safety_and_ethics.md`](docs/safety_and_ethics.md), [`SECURITY.md`](SECURITY.md),
-and [`hardware/safety_notes.md`](hardware/safety_notes.md).
+## Supplementary materials
 
-## Documentation
-
-- [Overview](docs/overview.md)
-- [Quickstart](docs/quickstart.md)
-- [Reproducibility protocol](docs/reproducibility_protocol.md)
-- [Case studies](docs/case_studies.md)
-- [Packet schema](docs/packet_schema.md)
-- [Metrics](docs/metrics.md)
-- [Limitations and non-goals](docs/limitations_and_non_goals.md)
-- [Safety and ethics](docs/safety_and_ethics.md)
-- [Reviewer checklist](docs/reviewer_checklist.md)
-- [Paper alignment (C1–C6)](docs/paper_alignment.md)
+The Supplementary Material set and the release/DOI procedure are listed in
+[`SUPPLEMENTARY_MATERIALS_CHECKLIST.md`](SUPPLEMENTARY_MATERIALS_CHECKLIST.md) and
+[`RELEASE_CHECKLIST.md`](RELEASE_CHECKLIST.md).
 
 ## Citation
 
-If you use this artifact, please cite it. A placeholder entry is provided in
-[`CITATION.cff`](CITATION.cff); replace the author and DOI fields before
-publication.
+If you use this artifact, please cite it (Lorenzo Fanari, Patxi Galán, Ángel
+Monteagudo). Metadata is in [`CITATION.cff`](CITATION.cff); the archival DOI will
+be added after the Zenodo release.
 
 ## License
 
 - **Code:** MIT (see [`LICENSE`](LICENSE)).
-- **Documentation, figures, and synthetic data:** Creative Commons Attribution
-  4.0 International (CC BY 4.0).
+- **Documentation, figures, and synthetic data:** CC BY 4.0.

@@ -8,9 +8,12 @@ perform receive-only observation.
 | Document | Purpose |
 |----------|---------|
 | [`adoption_tiers.md`](adoption_tiers.md) | Staged adoption model, from software-only to contained RF. |
-| [`bill_of_materials.md`](bill_of_materials.md) | Indicative components and approximate costs per tier. |
+| [`topology.md`](topology.md) | Text-based topology diagrams for each tier. |
+| [`bill_of_materials.csv`](bill_of_materials.csv) | Machine-readable indicative components and costs per tier. |
+| [`bill_of_materials.md`](bill_of_materials.md) | Human-readable bill of materials with per-tier notes. |
 | [`owned_devices_notes.md`](owned_devices_notes.md) | Notes for capturing on owned Wi-Fi/BLE/802.15.4 devices. |
 | [`receive_only_sdr_notes.md`](receive_only_sdr_notes.md) | Notes for receive-only SDR observation. |
+| [`wiring_diagrams/`](wiring_diagrams/README.md) | Wiring/diagram notes (no wiring needed for Tier 0). |
 | [`safety_notes.md`](safety_notes.md) | Mandatory safety and legal-use policy for all hardware extensions. |
 
 > All hardware extensions are optional and must only be used in authorised,

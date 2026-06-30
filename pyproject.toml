@@ -5,12 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "packet-observability"
 version = "0.1.0"
-description = "Open-source instrumentation and reproducibility workflow for synthetic packet-level observability in educational cyber-physical laboratories."
+description = "An open-source educational artifact for wireless packet observability in cyber-physical laboratories (software-only synthetic demo mode)."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [
-    { name = "TODO: replace before publication" },
+    { name = "Lorenzo Fanari" },
+    { name = "Patxi Galán" },
+    { name = "Ángel Monteagudo" },
 ]
 keywords = [
     "packet-observability",
