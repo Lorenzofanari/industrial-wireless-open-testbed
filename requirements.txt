@@ -1,0 +1,10 @@
+# Runtime dependencies for the packet-observability workflow.
+# Conservative lower bounds; the synthetic demo mode works fully offline.
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.6
+PyYAML>=6.0
+
+# Development / testing (optional):
+# pytest>=7.0
+# ruff>=0.1

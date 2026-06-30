@@ -1,0 +1,40 @@
+# IEEE 802.15.4/Zigbee-like low-power sensing profile (synthetic demo-mode).
+#
+# This is a TECHNOLOGY-LIKE profile, NOT a standard-conformant implementation or
+# validation of IEEE 802.15.4 / Zigbee / 6LoWPAN. The synthetic generator only
+# reproduces the *shape* of periodic, constrained-payload low-power sensing. It
+# emits no radio signal and never joins, scans, or disrupts any network.
+
+case_name: "IEEE 802.15.4/Zigbee-like low-power sensing"
+experiment_id: ieee802154_like
+technology: ieee802154
+description: >-
+  Synthetic packet-level observability profile inspired by low-power, low-rate
+  industrial sensing with periodic measurements and constrained payloads.
+
+number_of_nodes: 5
+roles:
+  sensors: 4
+  sinks: 1
+
+packet_size_bytes: [32, 64, 96]
+packet_interval_ms: [500, 1000, 2000]
+experiment_duration_s: 180
+repetitions: 5
+random_seed: 32345
+
+missing_sample_model:
+  type: independent_bernoulli
+  drop_probability: 0.0
+
+channel_or_band: "synthetic label (e.g. 2.4 GHz 802.15.4, owned testbed)"
+timestamp_precision: millisecond
+
+output_naming:
+  packets: packets.csv
+  metrics: metrics.csv
+  metrics_summary: metrics_summary.json
+  manifest: manifest.json
+  figures_dir: figures
+
+safety_mode: synthetic_or_owned_testbed_only

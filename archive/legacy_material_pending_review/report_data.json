@@ -1,0 +1,473 @@
+{
+  "cases": {
+    "case_wifi_latency": {
+      "label": "Wi-Fi-like",
+      "technology": "wifi",
+      "safety_mode": "owned_lab_network_only",
+      "n_nodes": 4,
+      "packet_size_bytes": [
+        128,
+        256,
+        512
+      ],
+      "packet_interval_ms": [
+        20,
+        50,
+        100
+      ],
+      "duration_s": 60.0,
+      "repetitions": 5,
+      "seed": 12345,
+      "run01_metrics": {
+        "total_packets": 5939,
+        "duration_s": 59.980527,
+        "packet_rate_pps": 99.0155,
+        "mean_packet_size_bytes": 127.313,
+        "inter_arrival_mean_ms": 10.1011,
+        "inter_arrival_std_ms": 9.3608,
+        "jitter_proxy_ms": 9.3608,
+        "missing_sequence_ids": 61,
+        "duplicate_sequence_ids": 0,
+        "capture_completeness": 0.9898,
+        "n_nodes": 2,
+        "per_node_packet_counts": {
+          "sta_01": 2965,
+          "sta_02": 2974
+        }
+      },
+      "repeatability": {
+        "experiment_id": "case_wifi_latency",
+        "n_runs": 5,
+        "metrics": {
+          "total_packets": {
+            "mean": 5935.6,
+            "std": 2.4166,
+            "min": 5932.0,
+            "max": 5939.0
+          },
+          "duration_s": {
+            "mean": 59.9802,
+            "std": 0.0004,
+            "min": 59.9797,
+            "max": 59.9807
+          },
+          "packet_rate_pps": {
+            "mean": 98.9593,
+            "std": 0.0397,
+            "min": 98.9,
+            "max": 99.0155
+          },
+          "mean_packet_size_bytes": {
+            "mean": 127.4362,
+            "std": 0.0635,
+            "min": 127.313,
+            "max": 127.496
+          },
+          "inter_arrival_mean_ms": {
+            "mean": 10.1069,
+            "std": 0.0041,
+            "min": 10.1011,
+            "max": 10.1129
+          },
+          "inter_arrival_std_ms": {
+            "mean": 9.3643,
+            "std": 0.0095,
+            "min": 9.3547,
+            "max": 9.3778
+          },
+          "jitter_proxy_ms": {
+            "mean": 9.3643,
+            "std": 0.0095,
+            "min": 9.3547,
+            "max": 9.3778
+          },
+          "missing_sequence_ids": {
+            "mean": 64.4,
+            "std": 2.4166,
+            "min": 61.0,
+            "max": 68.0
+          },
+          "duplicate_sequence_ids": {
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "capture_completeness": {
+            "mean": 0.9893,
+            "std": 0.0004,
+            "min": 0.9887,
+            "max": 0.9898
+          }
+        }
+      },
+      "runtime": {
+        "n_packets": 5952,
+        "generate_s": 0.039,
+        "metrics_s": 0.0278,
+        "plots_s": 0.6622,
+        "total_s": 0.729
+      },
+      "determinism": {
+        "seed": 4242,
+        "sha256": "e16ce2c22b7db734768db95eb46d9fb86e2f4b93a1abb8233029ffa74c6c690a",
+        "match": true
+      },
+      "storage_bytes": 2562685,
+      "run01_csv_kb": 349.0
+    },
+    "case_ble_telemetry": {
+      "label": "BLE-like",
+      "technology": "ble",
+      "safety_mode": "synthetic_or_owned_devices_only",
+      "n_nodes": 4,
+      "packet_size_bytes": [
+        20,
+        32,
+        64
+      ],
+      "packet_interval_ms": [
+        250,
+        500,
+        1000
+      ],
+      "duration_s": 120.0,
+      "repetitions": 5,
+      "seed": 22345,
+      "run01_metrics": {
+        "total_packets": 1422,
+        "duration_s": 119.754274,
+        "packet_rate_pps": 11.8743,
+        "mean_packet_size_bytes": 19.458,
+        "inter_arrival_mean_ms": 84.2746,
+        "inter_arrival_std_ms": 109.4912,
+        "jitter_proxy_ms": 109.4912,
+        "missing_sequence_ids": 18,
+        "duplicate_sequence_ids": 0,
+        "capture_completeness": 0.9875,
+        "n_nodes": 3,
+        "per_node_packet_counts": {
+          "sensor_01": 477,
+          "sensor_02": 473,
+          "sensor_03": 472
+        }
+      },
+      "repeatability": {
+        "experiment_id": "case_ble_telemetry",
+        "n_runs": 5,
+        "metrics": {
+          "total_packets": {
+            "mean": 1424.4,
+            "std": 4.1761,
+            "min": 1419.0,
+            "max": 1431.0
+          },
+          "duration_s": {
+            "mean": 119.7537,
+            "std": 0.0071,
+            "min": 119.7406,
+            "max": 119.7601
+          },
+          "packet_rate_pps": {
+            "mean": 11.8944,
+            "std": 0.0349,
+            "min": 11.8493,
+            "max": 11.9489
+          },
+          "mean_packet_size_bytes": {
+            "mean": 19.4914,
+            "std": 0.0439,
+            "min": 19.45,
+            "max": 19.549
+          },
+          "inter_arrival_mean_ms": {
+            "mean": 84.1329,
+            "std": 0.2469,
+            "min": 83.748,
+            "max": 84.4527
+          },
+          "inter_arrival_std_ms": {
+            "mean": 109.6197,
+            "std": 0.378,
+            "min": 109.0195,
+            "max": 110.1709
+          },
+          "jitter_proxy_ms": {
+            "mean": 109.6197,
+            "std": 0.378,
+            "min": 109.0195,
+            "max": 110.1709
+          },
+          "missing_sequence_ids": {
+            "mean": 15.6,
+            "std": 4.1761,
+            "min": 9.0,
+            "max": 21.0
+          },
+          "duplicate_sequence_ids": {
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "capture_completeness": {
+            "mean": 0.9892,
+            "std": 0.0029,
+            "min": 0.9854,
+            "max": 0.9938
+          }
+        }
+      },
+      "runtime": {
+        "n_packets": 1428,
+        "generate_s": 0.0111,
+        "metrics_s": 0.0114,
+        "plots_s": 0.6128,
+        "total_s": 0.6353
+      },
+      "determinism": {
+        "seed": 4242,
+        "sha256": "82e70498f932c18c372b839a0e90a415ddcd9c2ed7148d64e55e826013c004f7",
+        "match": true
+      },
+      "storage_bytes": 741122,
+      "run01_csv_kb": 84.7
+    },
+    "case_802154_sensing": {
+      "label": "802.15.4-like",
+      "technology": "ieee802154",
+      "safety_mode": "synthetic_or_owned_testbed_only",
+      "n_nodes": 5,
+      "packet_size_bytes": [
+        32,
+        64,
+        96
+      ],
+      "packet_interval_ms": [
+        500,
+        1000,
+        2000
+      ],
+      "duration_s": 180.0,
+      "repetitions": 5,
+      "seed": 32345,
+      "run01_metrics": {
+        "total_packets": 1422,
+        "duration_s": 179.508548,
+        "packet_rate_pps": 7.9216,
+        "mean_packet_size_bytes": 31.434,
+        "inter_arrival_mean_ms": 126.3255,
+        "inter_arrival_std_ms": 200.1005,
+        "jitter_proxy_ms": 200.1005,
+        "missing_sequence_ids": 18,
+        "duplicate_sequence_ids": 0,
+        "capture_completeness": 0.9875,
+        "n_nodes": 4,
+        "per_node_packet_counts": {
+          "node_01": 356,
+          "node_02": 358,
+          "node_03": 352,
+          "node_04": 356
+        }
+      },
+      "repeatability": {
+        "experiment_id": "case_802154_sensing",
+        "n_runs": 5,
+        "metrics": {
+          "total_packets": {
+            "mean": 1424.4,
+            "std": 4.1761,
+            "min": 1419.0,
+            "max": 1431.0
+          },
+          "duration_s": {
+            "mean": 179.5144,
+            "std": 0.0052,
+            "min": 179.508,
+            "max": 179.5203
+          },
+          "packet_rate_pps": {
+            "mean": 7.9347,
+            "std": 0.0231,
+            "min": 7.9049,
+            "max": 7.9713
+          },
+          "mean_packet_size_bytes": {
+            "mean": 31.488,
+            "std": 0.0825,
+            "min": 31.402,
+            "max": 31.595
+          },
+          "inter_arrival_mean_ms": {
+            "mean": 126.1177,
+            "std": 0.3671,
+            "min": 125.5379,
+            "max": 126.5924
+          },
+          "inter_arrival_std_ms": {
+            "mean": 200.2291,
+            "std": 0.4607,
+            "min": 199.4775,
+            "max": 200.9066
+          },
+          "jitter_proxy_ms": {
+            "mean": 200.2291,
+            "std": 0.4607,
+            "min": 199.4775,
+            "max": 200.9066
+          },
+          "missing_sequence_ids": {
+            "mean": 15.6,
+            "std": 4.1761,
+            "min": 9.0,
+            "max": 21.0
+          },
+          "duplicate_sequence_ids": {
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "capture_completeness": {
+            "mean": 0.9892,
+            "std": 0.0029,
+            "min": 0.9854,
+            "max": 0.9938
+          }
+        }
+      },
+      "runtime": {
+        "n_packets": 1428,
+        "generate_s": 0.0112,
+        "metrics_s": 0.0125,
+        "plots_s": 0.6398,
+        "total_s": 0.6635
+      },
+      "determinism": {
+        "seed": 4242,
+        "sha256": "7091cc5755e17db8a6b5d49d78037291029242bdea1bb92b53ecd18a107cd064",
+        "match": true
+      },
+      "storage_bytes": 736387,
+      "run01_csv_kb": 82.3
+    },
+    "case_lora_sdr_observability": {
+      "label": "LoRa/SDR-like",
+      "technology": "lora_sdr",
+      "safety_mode": "receive_only_or_synthetic_only",
+      "n_nodes": 3,
+      "packet_size_bytes": [
+        12,
+        24,
+        51
+      ],
+      "packet_interval_ms": [
+        1000,
+        5000,
+        10000
+      ],
+      "duration_s": 300.0,
+      "repetitions": 3,
+      "seed": 42345,
+      "run01_metrics": {
+        "total_packets": 888,
+        "duration_s": 299.039311,
+        "packet_rate_pps": 2.9695,
+        "mean_packet_size_bytes": 11.511,
+        "inter_arrival_mean_ms": 337.1356,
+        "inter_arrival_std_ms": 437.9752,
+        "jitter_proxy_ms": 437.9752,
+        "missing_sequence_ids": 11,
+        "duplicate_sequence_ids": 0,
+        "capture_completeness": 0.9878,
+        "n_nodes": 3,
+        "per_node_packet_counts": {
+          "emitter_01": 297,
+          "emitter_02": 291,
+          "emitter_03": 300
+        }
+      },
+      "repeatability": {
+        "experiment_id": "case_lora_sdr_observability",
+        "n_runs": 3,
+        "metrics": {
+          "total_packets": {
+            "mean": 891.0,
+            "std": 2.1602,
+            "min": 888.0,
+            "max": 893.0
+          },
+          "duration_s": {
+            "mean": 299.0353,
+            "std": 0.0127,
+            "min": 299.018,
+            "max": 299.0485
+          },
+          "packet_rate_pps": {
+            "mean": 2.9796,
+            "std": 0.0072,
+            "min": 2.9695,
+            "max": 2.9861
+          },
+          "mean_packet_size_bytes": {
+            "mean": 11.5087,
+            "std": 0.0168,
+            "min": 11.487,
+            "max": 11.528
+          },
+          "inter_arrival_mean_ms": {
+            "mean": 335.9967,
+            "std": 0.8174,
+            "min": 335.2561,
+            "max": 337.1356
+          },
+          "inter_arrival_std_ms": {
+            "mean": 438.0346,
+            "std": 0.2152,
+            "min": 437.8059,
+            "max": 438.3228
+          },
+          "jitter_proxy_ms": {
+            "mean": 438.0346,
+            "std": 0.2152,
+            "min": 437.8059,
+            "max": 438.3228
+          },
+          "missing_sequence_ids": {
+            "mean": 8.6667,
+            "std": 1.6997,
+            "min": 7.0,
+            "max": 11.0
+          },
+          "duplicate_sequence_ids": {
+            "mean": 0.0,
+            "std": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "capture_completeness": {
+            "mean": 0.9904,
+            "std": 0.0019,
+            "min": 0.9878,
+            "max": 0.9922
+          }
+        }
+      },
+      "runtime": {
+        "n_packets": 889,
+        "generate_s": 0.0079,
+        "metrics_s": 0.0101,
+        "plots_s": 0.7818,
+        "total_s": 0.7998
+      },
+      "determinism": {
+        "seed": 4242,
+        "sha256": "db490e35f04b798667a0433177539fb2c299fda774dbaefcfcd7ccc7553a5af4",
+        "match": true
+      },
+      "storage_bytes": 379937,
+      "run01_csv_kb": 50.4
+    }
+  },
+  "generated_utc": "2026-06-18T14:13:12Z"
+}

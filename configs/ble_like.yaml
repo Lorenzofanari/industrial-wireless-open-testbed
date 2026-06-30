@@ -1,0 +1,41 @@
+# BLE/IIoT-like telemetry-observability profile (synthetic demo-mode).
+#
+# This is a TECHNOLOGY-LIKE profile, NOT a standard-conformant implementation or
+# validation of Bluetooth Low Energy. The synthetic generator only reproduces
+# the *shape* of low-rate telemetry (timing, sizes, per-node sequence ids). It
+# emits no radio signal, performs no scanning, and targets no third-party device.
+
+case_name: "BLE/IIoT-like telemetry observability"
+experiment_id: ble_like
+technology: ble
+description: >-
+  Synthetic packet-level observability profile inspired by low-rate industrial
+  sensor telemetry, focusing on periodicity, missing samples, and gateway
+  logging stability.
+
+number_of_nodes: 4
+roles:
+  sensors: 3
+  gateways: 1
+
+packet_size_bytes: [20, 32, 64]
+packet_interval_ms: [250, 500, 1000]
+experiment_duration_s: 120
+repetitions: 5
+random_seed: 22345
+
+missing_sample_model:
+  type: independent_bernoulli
+  drop_probability: 0.0
+
+channel_or_band: "synthetic label (e.g. 2.4 GHz BLE, owned devices)"
+timestamp_precision: millisecond
+
+output_naming:
+  packets: packets.csv
+  metrics: metrics.csv
+  metrics_summary: metrics_summary.json
+  manifest: manifest.json
+  figures_dir: figures
+
+safety_mode: synthetic_or_owned_devices_only

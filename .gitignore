@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Tooling / test caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Generated experiment outputs (keep folder structure + READMEs/placeholders)
+results/*
+!results/README.md
+!results/.gitkeep
+!results/metrics/
+!results/figures/
+!results/manifests/
+results/metrics/*
+results/figures/*
+results/manifests/*
+results/demo/
+!results/metrics/.gitkeep
+!results/figures/.gitkeep
+!results/manifests/.gitkeep
+
+# Raw captures are never committed by default (use owned/authorised interfaces)
+*.pcap
+*.pcapng
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,42 @@
+# LoRa/Sub-GHz/SDR-like receive-only observability profile (synthetic demo-mode).
+#
+# This is a TECHNOLOGY-LIKE profile, NOT a standard-conformant implementation or
+# validation of LoRa / Sub-GHz / SDR systems. The synthetic generator only
+# reproduces the *shape* of long-range, low-rate telemetry events. Any optional
+# hardware extension is strictly RECEIVE-ONLY observation on legally observable
+# bands; this profile never transmits and performs no active probing.
+
+case_name: "LoRa/Sub-GHz/SDR-like receive-only observability"
+experiment_id: lora_sdr_like
+technology: lora_sdr
+description: >-
+  Synthetic packet-level observability profile inspired by long-range, low-rate
+  telemetry event logging and channel-occupancy proxies, with optional
+  receive-only SDR observation as a hardware extension.
+
+number_of_nodes: 3
+roles:
+  emitters_synthetic: 3
+  receivers_rx_only: 1
+
+packet_size_bytes: [12, 24, 51]
+packet_interval_ms: [1000, 5000, 10000]
+experiment_duration_s: 300
+repetitions: 3
+random_seed: 42345
+
+missing_sample_model:
+  type: independent_bernoulli
+  drop_probability: 0.0
+
+channel_or_band: "synthetic label (e.g. 868/915 MHz ISM) - RECEIVE ONLY"
+timestamp_precision: millisecond
+
+output_naming:
+  packets: packets.csv
+  metrics: metrics.csv
+  metrics_summary: metrics_summary.json
+  manifest: manifest.json
+  figures_dir: figures
+
+safety_mode: receive_only_or_synthetic_only

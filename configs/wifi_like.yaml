@@ -1,0 +1,50 @@
+# Wi-Fi-like packet-observability profile (synthetic demo-mode).
+#
+# This is a TECHNOLOGY-LIKE profile, NOT a standard-conformant implementation or
+# validation of Wi-Fi / IEEE 802.11. The synthetic generator only reproduces the
+# *shape* of a packet stream (timing, sizes, per-node sequence ids). It emits no
+# radio signal and performs no capture. Optional owned-device capture is a
+# separate, authorised extension (see hardware/adoption_tiers.md).
+
+case_name: "Wi-Fi-like packet observability"
+experiment_id: wifi_like
+technology: wifi
+description: >-
+  Synthetic packet-level observability profile inspired by short-range
+  benign Wi-Fi traffic between owned laboratory nodes. Demonstrates packet
+  rate, inter-arrival timing, jitter proxy, and capture-completeness metrics.
+
+# Topology (logical only in demo mode).
+number_of_nodes: 4
+roles:
+  senders: 2
+  receivers: 1
+  monitors: 1
+
+# Traffic profile (the generator uses the first value by default).
+packet_size_bytes: [128, 256, 512]
+packet_interval_ms: [20, 50, 100]
+experiment_duration_s: 60
+repetitions: 5
+random_seed: 12345
+
+# Synthetic missing-sample model: omit rows (advancing the per-node sequence id)
+# so that downstream analysis can exercise its missing-sequence-id logic. This is
+# a software knob only; it does not represent any real radio phenomenon.
+missing_sample_model:
+  type: independent_bernoulli
+  drop_probability: 0.0
+
+# Presentation metadata (cosmetic labels for a technology-like profile).
+channel_or_band: "synthetic label (e.g. 5 GHz lab-owned AP)"
+timestamp_precision: microsecond
+
+# Output naming convention.
+output_naming:
+  packets: packets.csv
+  metrics: metrics.csv
+  metrics_summary: metrics_summary.json
+  manifest: manifest.json
+  figures_dir: figures
+
+safety_mode: synthetic_or_owned_devices_only
