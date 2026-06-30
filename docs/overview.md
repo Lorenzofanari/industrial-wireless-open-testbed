@@ -34,10 +34,11 @@ metrics → figures workflow run with no hardware, so that:
 
 ## How it relates to the paper
 
-The repository is the artifact that supports the paper's contributions. Each
-contribution (C1–C6) maps to concrete evidence in the repository; see
-[`paper_alignment.md`](paper_alignment.md). The four technology-like case-study
-profiles are described in [`case_studies.md`](case_studies.md).
+The repository stands on its own as a teaching artifact and does not depend on
+the paper to be useful. For readers who want the connection, a single document,
+[`paper_alignment.md`](paper_alignment.md), maps the related MDPI *Hardware*
+paper to the repository. The four technology-like case-study profiles are
+described in [`case_studies.md`](case_studies.md).
 
 ## What it is not
 
@@ -52,6 +53,7 @@ outputs are not real radio measurements. See
 
 ## Where to go next
 
+- [`README.md`](README.md) — the documentation index for the whole project.
 - [`quickstart.md`](quickstart.md) — reproduce the demo from a clean clone.
 - [`reproducibility_protocol.md`](reproducibility_protocol.md) — how
   reproducibility is achieved and verified.

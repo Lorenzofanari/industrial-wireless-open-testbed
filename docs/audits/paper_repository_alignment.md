@@ -5,8 +5,10 @@ Cyber–Physical Laboratories* (MDPI *Hardware* structure: Introduction, Design,
 Build Instructions, Operating Instructions, Validation, Conclusion).
 
 This report records the state of the repository relative to the manuscript and
-the actions taken to bring it into coherence. A concise final report is kept at
-the repository root in `PAPER_REPOSITORY_ALIGNMENT.md`.
+the actions taken to bring it into coherence. A concise coherence summary is kept
+alongside this file in
+[`repository_coherence_report.md`](repository_coherence_report.md). The
+user-facing mapping lives in [`../paper_alignment.md`](../paper_alignment.md).
 
 ## Current repository strengths
 

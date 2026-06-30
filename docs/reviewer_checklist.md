@@ -67,4 +67,5 @@ on a commodity machine in a few minutes and needs no radio hardware.
 - [ ] Contributions C1–C6 map to repository evidence
       (`docs/paper_alignment.md`).
 - [ ] Paper sections (Introduction → Conclusion) map to repository evidence
-      (`docs/PAPER_REPOSITORY_ALIGNMENT.md`).
+      (`docs/paper_alignment.md`; detailed report in
+      `docs/audits/paper_repository_alignment.md`).

@@ -1,56 +1,59 @@
 # Repository submission readiness
 
-Status of the repository for MDPI *Hardware* Supplementary Material submission.
+Status of the repository for public release and MDPI *Hardware* Supplementary
+Material submission. This reflects the standalone-artifact coherence pass; the
+internal narrative is in
+[`audits/repository_coherence_report.md`](audits/repository_coherence_report.md).
 
-## Files added (this alignment pass)
+## Files present (key set)
 
-Root:
+Root: `README.md`, `LICENSE`, `CITATION.cff`, `requirements.txt`,
+`pyproject.toml`, `environment.yml`, `RELEASE_CHECKLIST.md`,
+`SUPPLEMENTARY_MATERIALS_CHECKLIST.md`, `claims_included.md`,
+`claims_excluded.md`, plus the standard `CONTRIBUTING.md`,
+`CODE_OF_CONDUCT.md`, `SECURITY.md`.
 
-- `SUPPLEMENTARY_MATERIALS_CHECKLIST.md`
-- `RELEASE_CHECKLIST.md`
-- `claims_included.md`, `claims_excluded.md`
-- `PAPER_REPOSITORY_ALIGNMENT.md` (final report)
+Docs: a documentation index (`docs/README.md`), get-started (`overview.md`,
+`quickstart.md`, `build_instructions.md`), teaching set
+(`operating_instructions.md`, `learning_objectives.md`, `lab_activity_plan.md`,
+`student_worksheet.md`, `instructor_guide.md`, `assessment_rubric.md`,
+`common_student_mistakes.md`), data/metrics (`case_studies.md`,
+`packet_schema.md`, `metrics.md`), reproducibility/validation
+(`reproducibility_protocol.md`, `reproducibility_expected_outputs.md`,
+`validation_walkthrough.md`), scope/safety/design (`safety_and_ethics.md`,
+`limitations_and_non_goals.md`, `design_files_checklist.md`,
+`design_integrity_statement.md`), reviewer/paper (`reviewer_checklist.md`,
+`paper_alignment.md`, `repository_submission_readiness.md`), and internal
+reports under `docs/audits/`.
 
-Docs:
+Hardware: `topology.md`, `bill_of_materials.csv`, `bill_of_materials.md`,
+`adoption_tiers.md`, `owned_devices_notes.md`, `receive_only_sdr_notes.md`,
+`wiring_diagrams/README.md`, `safety_notes.md`.
 
-- `docs/PAPER_REPOSITORY_ALIGNMENT.md` (inspection report)
-- `docs/build_instructions.md`, `docs/operating_instructions.md`
-- `docs/learning_objectives.md`, `docs/lab_activity_plan.md`,
-  `docs/student_worksheet.md`, `docs/instructor_guide.md`,
-  `docs/assessment_rubric.md`, `docs/common_student_mistakes.md`
-- `docs/validation_walkthrough.md`, `docs/reproducibility_expected_outputs.md`
-- `docs/design_files_checklist.md`, `docs/design_integrity_statement.md`
+## Changed in the coherence pass
 
-Hardware:
-
-- `hardware/topology.md`, `hardware/bill_of_materials.csv`,
-  `hardware/wiring_diagrams/README.md`
-
-## Files changed
-
-- `README.md` — rewritten with the final title and reviewer-friendly sections.
-- `CITATION.cff` — final title, authors, repository URL, DOI placeholder.
-- `pyproject.toml` — description and authors updated.
-- `docs/overview.md`, `docs/limitations_and_non_goals.md`,
-  `docs/paper_alignment.md`, `docs/reviewer_checklist.md`,
-  `hardware/README.md` — reframed to be educational/artifact-facing.
+- `README.md` rewritten to a repository-first identity (short title, practical
+  navigation, paper details moved to a "Related paper" section).
+- `docs/README.md` documentation index added.
+- `docs/paper_alignment.md` restructured around the six Hardware sections.
+- Internal alignment report moved to `docs/audits/paper_repository_alignment.md`;
+  `docs/audits/repository_coherence_report.md` added; the top-level
+  `PAPER_REPOSITORY_ALIGNMENT.md` removed to keep the root lightweight.
 
 ## Checks run
 
-- `pytest` — all tests pass.
+- `pytest` — all tests pass (incl. the scope/terminology guard).
 - `python scripts/run_demo.py --all` — produces all expected outputs.
-- `python scripts/verify_reproducibility.py --all` — reports PASS for all four
-  cases (deterministic and reference-consistent).
+- `python scripts/verify_reproducibility.py --all` — PASS for all four cases.
 - Firewall scan over tracked, non-archive files — no prohibited
-  scheduler/claim material present.
+  scheduler/claim material.
 
 ## Checks not run
 
-- **Zenodo archival / DOI minting** — requires a published release; tracked in
-  `RELEASE_CHECKLIST.md`.
-- **`ruff` lint** — not installed in the local environment; runs (non-blocking)
-  in CI.
-- **GitHub Actions run** — executes on push/PR on GitHub, not locally.
+- Zenodo archival / DOI minting — requires a published release (see
+  `RELEASE_CHECKLIST.md`).
+- `ruff` lint — not installed locally; runs (non-blocking) in CI.
+- GitHub Actions — runs on push/PR on GitHub, not locally.
 
 ## Remaining TODOs
 
@@ -62,8 +65,8 @@ Hardware:
 
 ## Readiness score
 
-**9/10 — ready for submission pending the Zenodo DOI.** All required documents,
-educational materials, build/operating instructions, validation workflow, and
-metadata are present; the synthetic demo reproduces deterministically; and no
-out-of-scope or prohibited material is present. The only remaining external step
-is minting and inserting the archival DOI.
+**9/10 — ready for submission pending the Zenodo DOI.** The repository is
+understandable on its own, the software-only demo reproduces deterministically,
+the teaching materials support a full lab session, and no out-of-scope or
+prohibited material is present. The only remaining external step is the archival
+DOI.
