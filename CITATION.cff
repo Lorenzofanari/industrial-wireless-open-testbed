@@ -2,20 +2,19 @@ cff-version: 1.2.0
 message: "If you use this artifact, please cite it as below."
 title: "An Open-Source Educational Artifact for Wireless Packet Observability in Cyber-Physical Laboratories"
 abstract: >-
-  An open-source educational hardware/software artifact for teaching reproducible
-  wireless packet observability in cyber-physical laboratories. The artifact
-  provides a configuration-driven, software-only synthetic demo mode that
-  generates deterministic packet traces, computes packet-level metrics, produces
-  figures, and writes per-run manifests with SHA-256 hashes, across four
-  technology-like case-study profiles (Wi-Fi-like, BLE/IIoT-like, IEEE
-  802.15.4/Zigbee-like, and LoRa/Sub-GHz/SDR receive-only). It is extensible to
-  optional owned-device and receive-only observation. Synthetic demo-mode outputs
-  are not real radio measurements; the artifact implements no wireless algorithm,
-  interference mitigation, offensive cybersecurity functionality, or
-  radio-standard validation.
+  A software-first educational artifact with optional owned-device and
+  receive-only hardware extensions for teaching reproducible wireless packet
+  observability in cyber-physical laboratories. The default workflow is
+  software-only: it generates deterministic synthetic packet traces, computes
+  packet-level metrics, produces figures, and writes per-run manifests with
+  SHA-256 hashes across four technology-like case-study profiles (Wi-Fi-like,
+  BLE/IIoT-like, IEEE 802.15.4/Zigbee-like, and LoRa/Sub-GHz/SDR-like).
+  Optional hardware extensions are restricted to owned or authorised devices and
+  receive-only observation where legally permitted. Synthetic traces are not
+  real radio measurements; the artifact does not validate the performance of
+  Wi-Fi, BLE, IEEE 802.15.4, Zigbee, LoRa, or SDR systems.
 type: software
 version: 0.1.0
-date-released: 2026-06-30
 license: MIT
 keywords:
   - packet observability
@@ -32,7 +31,3 @@ authors:
   - family-names: Monteagudo
     given-names: "Ángel"
 repository-code: "https://github.com/Lorenzofanari/industrial-wireless-open-testbed"
-identifiers:
-  - type: doi
-    value: "TO_BE_ADDED_AFTER_ZENODO_RELEASE"
-    description: "Placeholder; replace with the Zenodo DOI after archiving the release."
