@@ -90,6 +90,9 @@ seed, git commit, and SHA-256 hashes of all outputs. The committed traces in
 `scripts/verify_reproducibility.py`. Synthetic demo-mode outputs verify the
 software pipeline; they are not real radio measurements.
 
+For manuscript reproduction, use the exact tagged release or commit reported in
+the paper rather than the moving default branch.
+
 ## Safety
 
 Safe by design: the default workflow is software-only and emits no RF; optional
@@ -115,8 +118,11 @@ the repository is designed to be useful on its own, independent of the paper.
 
 ## Citation
 
-Please cite using the metadata in [`CITATION.cff`](CITATION.cff). The archival
-DOI will be added after the Zenodo release.
+Citation metadata are provided in [`CITATION.cff`](CITATION.cff).
+
+The immutable archival DOI will be added after the `v0.1.0` GitHub release has
+been deposited on Zenodo. Until then, cite the repository URL and the exact Git
+commit used for the experiment.
 
 ## License
 

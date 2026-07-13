@@ -7,8 +7,15 @@ synthetic demo mode: no radio emission, no network interface.
 ## 1. Clone
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Lorenzofanari/industrial-wireless-open-testbed.git
 cd industrial-wireless-open-testbed
+```
+
+For the archived paper artifact, check out the versioned release after it has
+been published:
+
+```bash
+git checkout v0.1.0
 ```
 
 ## 2. Create an environment
