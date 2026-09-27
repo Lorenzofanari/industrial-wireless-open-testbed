@@ -9,6 +9,8 @@ them from `configs/` and `data/` (see "Required for rebuild?").
 | Project front page | `README.md` | Markdown | Yes | Introduction / overview | No |
 | License | `LICENSE` | Text | No (legal) | Licensing | No |
 | Citation metadata | `CITATION.cff` | YAML/CFF | Yes | Citation | No |
+| Changelog | `CHANGELOG.md` | Markdown | Yes | Software state / revision history | No |
+| Release notes | `RELEASE_NOTES_v0.1.1.md` (current), `RELEASE_NOTES_v0.1.0.md` (baseline) | Markdown | Yes | Software state | No |
 | Pinned runtime deps | `requirements.txt` | Text | Yes | Build Instructions | Yes |
 | Packaging / tooling config | `pyproject.toml` | TOML | Yes | Build Instructions | Yes |
 | Conda environment | `environment.yml` | YAML | Yes | Build Instructions | Yes |
@@ -41,6 +43,7 @@ them from `configs/` and `data/` (see "Required for rebuild?").
 | Safety notes (hardware) | `hardware/safety_notes.md` | Markdown | Yes | Safety | No |
 | Canonical synthetic traces | `data/synthetic_demo/*/packets.csv` | CSV | Regenerable | Validation references | No (regenerable) |
 | Tests | `tests/*.py` | Python | Yes | Validation | No |
+| Independent analytical metric tests | `tests/test_metrics_independent.py` | Python | Yes | Validation (Equation (4), sequence ids, per-node timing, boundaries) | No |
 | CI workflow | `.github/workflows/reproducibility.yml` | YAML | Yes | Validation | No |
 | Claims included | `claims_included.md` | Markdown | Yes | Scope | No |
 | Claims excluded | `claims_excluded.md` | Markdown | Yes | Scope / firewall | No |

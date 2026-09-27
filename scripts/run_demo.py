@@ -23,7 +23,7 @@ import shutil
 from pathlib import Path
 
 import _bootstrap  # noqa: F401  (sets up sys.path)
-from _bootstrap import CASE_CONFIGS, repo_root
+from _bootstrap import CASE_CONFIGS, repo_root, workload_label
 
 from packet_observability.io import load_config, write_packets_csv
 from packet_observability.manifest import build_manifest, write_manifest
@@ -40,7 +40,7 @@ def run_one(config_path: str | Path, out_dir: str | Path, *, seed: int | None = 
     out_dir.mkdir(parents=True, exist_ok=True)
 
     config = load_config(config_path)
-    print(f"\n=== {config.experiment_id} ({config.technology}, {config.safety_mode}) ===")
+    print(f"\n=== {workload_label(config.experiment_id)} [{config.technology}, {config.safety_mode}] ===")
 
     records = generate_packets(config, seed=seed)
     packets_csv = write_packets_csv(records, out_dir / "packets.csv")

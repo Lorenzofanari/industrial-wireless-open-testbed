@@ -14,8 +14,10 @@ documentation (`docs/`, `hardware/`). See
 
 ## Versioned repository
 
-The artifact is tracked in Git. Releases are tagged (e.g. `v0.1.0`) and archived
-for citation (see [`../RELEASE_CHECKLIST.md`](../RELEASE_CHECKLIST.md)).
+The artifact is tracked in Git. Releases are tagged (`v0.1.0` archived
+baseline, `v0.1.1` corrected release) and archived for citation (see
+[`../RELEASE_CHECKLIST.md`](../RELEASE_CHECKLIST.md) and
+[`../CHANGELOG.md`](../CHANGELOG.md)). Tags are never moved or re-created.
 
 ## SHA-256 hashes in manifests
 

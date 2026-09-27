@@ -5,6 +5,12 @@ Material submission. This reflects the standalone-artifact coherence pass; the
 internal narrative is in
 [`audits/repository_coherence_report.md`](audits/repository_coherence_report.md).
 
+> **Status note.** This page is a historical snapshot written before the
+> `v0.1.0` release. `v0.1.0` has since been tagged and archived on Zenodo
+> (DOI 10.5281/zenodo.21347262). The current corrected release is `v0.1.1`;
+> see [`../CHANGELOG.md`](../CHANGELOG.md) and
+> [`../RELEASE_CHECKLIST.md`](../RELEASE_CHECKLIST.md).
+
 ## Files present (key set)
 
 Root: `README.md`, `LICENSE`, `CITATION.cff`, `requirements.txt`,

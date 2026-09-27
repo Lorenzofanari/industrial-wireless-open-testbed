@@ -26,3 +26,19 @@ CASE_CONFIGS = [
     "ieee802154_like",
     "lora_sdr_like",
 ]
+
+# Neutral scientific-facing workload identifiers (W1-W4) for each legacy config
+# name. The YAML filenames and experiment_id values are kept unchanged for
+# backward compatibility; see docs/case_studies.md.
+WORKLOAD_LABELS = {
+    "wifi_like": "W1",
+    "ble_like": "W2",
+    "ieee802154_like": "W3",
+    "lora_sdr_like": "W4",
+}
+
+
+def workload_label(experiment_id: str) -> str:
+    """Return ``"W1 (wifi_like)"``-style label, or the bare id if unmapped."""
+    label = WORKLOAD_LABELS.get(experiment_id)
+    return f"{label} ({experiment_id})" if label else experiment_id

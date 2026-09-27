@@ -23,7 +23,7 @@ import tempfile
 from pathlib import Path
 
 import _bootstrap  # noqa: F401  (sets up sys.path)
-from _bootstrap import CASE_CONFIGS, repo_root
+from _bootstrap import CASE_CONFIGS, repo_root, workload_label
 
 from packet_observability.hash_utils import sha256_file
 from packet_observability.io import load_config, write_packets_csv
@@ -76,8 +76,8 @@ def main(argv: list[str] | None = None) -> int:
         config_paths = [Path(args.config)]
 
     ok = True
-    print(f"{'case':22} {'deterministic':14} {'matches reference':18} sha256[:16]")
-    print("-" * 72)
+    print(f"{'profile (config)':24} {'deterministic':14} {'matches reference':18} sha256[:16]")
+    print("-" * 74)
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
         for cp in config_paths:
@@ -92,9 +92,9 @@ def main(argv: list[str] | None = None) -> int:
                 ok = False
             if not r["deterministic"]:
                 ok = False
-            print(f"{r['experiment_id']:22} {det:14} {ref:18} {r['sha256'][:16]}")
+            print(f"{workload_label(r['experiment_id']):24} {det:14} {ref:18} {r['sha256'][:16]}")
 
-    print("-" * 72)
+    print("-" * 74)
     if ok:
         print("[verify] PASS: all checked traces are deterministic and consistent.")
         return 0

@@ -65,14 +65,22 @@ data/synthetic_demo/        canonical, versioned synthetic traces
 results/      regenerated metrics/figures/manifests (git-ignored)
 hardware/     optional hardware tier notes (topology, BOM, safety)
 docs/         quickstart, build, operating, teaching, validation docs
-tests/        determinism, metrics, manifests, configs, terminology guard
+tests/        determinism, metrics, independent analytical metric tests, manifests, configs, terminology guard
 ```
 
-## Case-study profiles
+## Reference workload profiles (W1–W4)
 
-Four **technology-like** profiles over one common toolchain (not
-standard-conformant; see [`docs/case_studies.md`](docs/case_studies.md)):
-Wi-Fi-like, BLE/IIoT-like, IEEE 802.15.4/Zigbee-like, and LoRa/Sub-GHz/SDR-like.
+Four synthetic reference workload profiles over one common toolchain (not
+standard-conformant; see [`docs/case_studies.md`](docs/case_studies.md)). The
+neutral identifiers `W1`–`W4` are used in scientific-facing text; the YAML
+filenames are kept unchanged for compatibility:
+
+| Profile | Config file |
+|---------|-------------|
+| W1 | `configs/wifi_like.yaml` |
+| W2 | `configs/ble_like.yaml` |
+| W3 | `configs/ieee802154_like.yaml` |
+| W4 | `configs/lora_sdr_like.yaml` |
 
 ## Build tiers
 
@@ -92,6 +100,17 @@ software pipeline; they are not real radio measurements.
 
 For manuscript reproduction, use the exact tagged release or commit reported in
 the paper rather than the moving default branch.
+
+## Releases
+
+| Release | Status | Notes |
+|---------|--------|-------|
+| `v0.1.1` | **current, corrected release** | Corrected finite-span event-rate estimator `(N - 1) / (t_max - t_min)` (Equation (4)), defined boundary behaviour, independent analytical regression tests, W1–W4 terminology. This is the software state used for the revised manuscript evaluation. See [`CHANGELOG.md`](CHANGELOG.md) and [`RELEASE_NOTES_v0.1.1.md`](RELEASE_NOTES_v0.1.1.md). |
+| `v0.1.0` | previous / archived baseline | Initial archival release (Zenodo DOI [10.5281/zenodo.21347262](https://doi.org/10.5281/zenodo.21347262)). Its event-rate estimator used `N / (t_max - t_min)`. Retained unchanged for provenance; see [`RELEASE_NOTES_v0.1.0.md`](RELEASE_NOTES_v0.1.0.md). |
+
+```bash
+git checkout v0.1.1
+```
 
 ## Safety
 
@@ -120,9 +139,13 @@ the repository is designed to be useful on its own, independent of the paper.
 
 Citation metadata are provided in [`CITATION.cff`](CITATION.cff).
 
-The immutable archival DOI will be added after the `v0.1.0` GitHub release has
-been deposited on Zenodo. Until then, cite the repository URL and the exact Git
-commit used for the experiment.
+- Concept DOI (always resolves to the latest archived version):
+  [10.5281/zenodo.21347261](https://doi.org/10.5281/zenodo.21347261).
+- `v0.1.0` (archived baseline) version DOI:
+  [10.5281/zenodo.21347262](https://doi.org/10.5281/zenodo.21347262).
+- `v0.1.1` (corrected release) version DOI: pending Zenodo archival of the
+  `v0.1.1` GitHub release. Until it is minted, cite the repository URL, the tag
+  `v0.1.1` and the exact Git commit.
 
 ## License
 

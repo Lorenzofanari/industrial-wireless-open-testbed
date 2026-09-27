@@ -7,14 +7,27 @@ abstract: >-
   observability in cyber-physical laboratories. The default workflow is
   software-only: it generates deterministic synthetic packet traces, computes
   packet-level metrics, produces figures, and writes per-run manifests with
-  SHA-256 hashes across four technology-like case-study profiles (Wi-Fi-like,
-  BLE/IIoT-like, IEEE 802.15.4/Zigbee-like, and LoRa/Sub-GHz/SDR-like).
+  SHA-256 hashes across four synthetic reference workload profiles W1-W4
+  (configuration files wifi_like, ble_like, ieee802154_like, lora_sdr_like).
   Optional hardware extensions are restricted to owned or authorised devices and
   receive-only observation where legally permitted. Synthetic traces are not
   real radio measurements; the artifact does not validate the performance of
-  Wi-Fi, BLE, IEEE 802.15.4, Zigbee, LoRa, or SDR systems.
+  Wi-Fi, BLE, IEEE 802.15.4, Zigbee, LoRa, or SDR systems. Version 0.1.1
+  corrects the finite-span event-rate estimator to (N - 1) / (t_max - t_min)
+  and adds independent, analytically derived regression tests.
 type: software
-version: 0.1.0
+version: 0.1.1
+# TODO(release v0.1.1): once the GitHub release v0.1.1 has been archived by
+# Zenodo, add the new *version* DOI as `doi:` and the actual release date as
+# `date-released:` (YYYY-MM-DD). Do not reuse the v0.1.0 version DOI
+# (10.5281/zenodo.21347262) for this version.
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21347261
+    description: "Zenodo concept DOI (resolves to the latest archived version of this software)."
+  - type: doi
+    value: 10.5281/zenodo.21347262
+    description: "Zenodo version DOI of the previous archived baseline release v0.1.0."
 license: MIT
 keywords:
   - packet observability

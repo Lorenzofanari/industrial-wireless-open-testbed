@@ -11,12 +11,15 @@ git clone https://github.com/Lorenzofanari/industrial-wireless-open-testbed.git
 cd industrial-wireless-open-testbed
 ```
 
-For the archived paper artifact, check out the versioned release after it has
-been published:
+For the paper artifact, check out the corrected release used for the revised
+evaluation:
 
 ```bash
-git checkout v0.1.0
+git checkout v0.1.1
 ```
+
+(`v0.1.0` is the previous, archived baseline; it is kept unchanged for
+provenance. See `CHANGELOG.md` for the differences.)
 
 ## 2. Create an environment
 
@@ -53,7 +56,8 @@ One case study:
 python scripts/run_demo.py --config configs/wifi_like.yaml --out results/demo/wifi_like
 ```
 
-All four case studies:
+All four reference workload profiles (W1–W4; see
+[`case_studies.md`](case_studies.md) for the W1–W4 → config-file mapping):
 
 ```bash
 python scripts/run_demo.py --all

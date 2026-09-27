@@ -5,14 +5,15 @@ This document describes what `python scripts/run_demo.py --all` produces and how
 
 ## Files that should be generated
 
-Per case (`wifi_like`, `ble_like`, `ieee802154_like`, `lora_sdr_like`) under
-`results/demo/<case>/`:
+Per profile (W1 `wifi_like`, W2 `ble_like`, W3 `ieee802154_like`,
+W4 `lora_sdr_like`; see [`case_studies.md`](case_studies.md)) under
+`results/demo/<case>/` (directory names keep the config name):
 
 | File | Description |
 |------|-------------|
 | `packets.csv` | Canonical synthetic packet trace. |
-| `metrics.csv` | Scalar metrics in long form. |
-| `metrics_summary.json` | Structured metrics summary (incl. per-node counts). |
+| `metrics.csv` | Scalar metrics in long form (`packet_rate_pps` is `(N - 1) / (t_max - t_min)`, see [`metrics.md`](metrics.md)). |
+| `metrics_summary.json` | Structured metrics summary (incl. per-node counts and per-node mean inter-arrival). |
 | `inter_arrival.csv` | Per-packet inter-arrival series. |
 | `manifest.json` | Config, seed, git commit, environment, and output hashes. |
 | `figures/*.png` | Four figures (count-over-time, inter-arrival, size, per-node). |

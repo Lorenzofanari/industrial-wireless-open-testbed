@@ -1,12 +1,16 @@
 name: reproducibility
 
-# Hardware-free CI: installs Python, runs tests, runs the synthetic demo on a
-# lightweight config, and verifies reproducibility. No radio hardware required.
+# Hardware-free CI: installs Python, runs the full test suite (including the
+# independent analytical regression tests in tests/test_metrics_independent.py),
+# runs the synthetic demo for all four W1-W4 profiles, and verifies trace
+# reproducibility against the committed references. No radio hardware required.
 
 on:
   push:
     branches: [main, master]
+    tags: ["v*"]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   reproducibility:
@@ -33,12 +37,16 @@ jobs:
         run: ruff check src tests scripts
         continue-on-error: true
 
-      - name: Run tests
-        run: pytest -q
+      - name: Report package version
+        run: python -c "import sys; sys.path.insert(0, 'src'); import packet_observability as p; print('packet_observability', p.__version__)"
 
-      - name: Synthetic demo (lightweight config)
-        run: |
-          python scripts/run_demo.py --config configs/lora_sdr_like.yaml --out results/demo/lora_sdr_like
+      # Executes every test under tests/, including the independent
+      # analytically-derived regression tests (TEST A/B/C and boundary cases).
+      - name: Run tests
+        run: python -m pytest -v
+
+      - name: Synthetic demo (all W1-W4 profiles)
+        run: python scripts/run_demo.py --all
 
       - name: Verify reproducibility
         run: python scripts/verify_reproducibility.py --all
